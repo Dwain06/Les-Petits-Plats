@@ -1,32 +1,12 @@
-async function getRecipes() {
-    return fetch("./data/photographers.json")
-        .then(function (res) {
-            if (res.ok) {
-                return res.json();
-            }
-        })
-        .then(function (data) {
-            return data;
-        })
-        .catch(function (err) {
-            alert("Erreur : " + err);
-        });
-}
+function init() {
+    const recipesSection = document.querySelector("#recipes");
+    console.log(recipes);
 
-async function displayData(photographers) {
-    const photographersSection = document.querySelector("#photographer_section");
-
-    photographers.forEach((photographer) => {
-        // eslint-disable-next-line no-undef
-        const photographerModel = new PhotographerFactory(photographer);
-        const userCardDOM = photographerModel.getUserCardDOM();
-        photographersSection.appendChild(userCardDOM.article);
+    recipes.forEach((recipe) => {
+        const recipeCard = new RecipesFactory(recipe);
+        const recipeCardDOM = recipeCard.getRecipeCardDOM();
+        recipesSection.appendChild(recipeCardDOM);
     });
-}
-
-async function init() {
-    const responsePhotographers = await getPhotographers();
-    displayData(responsePhotographers.photographers);
 }
 
 init();
