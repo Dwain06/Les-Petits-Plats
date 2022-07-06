@@ -4,12 +4,10 @@ class RecipesFactory {
         this.description = data.description;
 
         //DOM elements
-        this.divCard = document.createElement("div");
         this.divCol = document.createElement("div");
 
         
-        //Set attributes and class for the CSS
-        this.divCard.classList.add("row","row-cols-1","row-cols-sm-2","row-cols-md-3","g-3");
+        //Set attributes and class
         this.divCol.classList.add("col");
 
         this.divCol.innerHTML =
