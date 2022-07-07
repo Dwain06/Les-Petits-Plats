@@ -12,8 +12,10 @@
 
 .card-title h2, .card-title p, .card-title i {
     font-size: 18px;
-    white-space: nowrap;
-    overflow: hidden;
+}
+
+.card-title h2{
+    max-width: 300px;
 }
 
 .card-body {
