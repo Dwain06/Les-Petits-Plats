@@ -1,6 +1,25 @@
-.card-text {
+.card-text, .ingredients {
+    font-size: 12px;
     display: -webkit-box;
     -webkit-box-orient: vertical;
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 6;
     overflow: hidden;
+}
+
+.ingredients p{
+    margin-bottom: 0;
+}
+
+.card-title h2, .card-title p, .card-title i {
+    font-size: 18px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.card-body {
+    height: 200px;
+}
+
+i {
+    margin-right: 5px;
 }
