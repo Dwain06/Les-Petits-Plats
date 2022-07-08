@@ -19,16 +19,26 @@
     <main>
       <div class="album py-5">
         <div class="container">
-          <div id="recipes" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
 
+          <div class="row mb-3">
+            <div class="col">
+               <input class="form-control bg-light" id="searchInput" type="text" placeholder="Rechercher une recette">
+            </div>
+         </div>
+
+          <div id="recipes" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+            <!-- recipes constructor here -->
           </div>
+
         </div>
       </div>
     </main>
 
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="./scripts/data/recipes.js"></script>
     <script src="./scripts/factories/recipesFactory.js"></script>
     <script src="./scripts/pages/index.js"></script>
+    <script src="./scripts/filters/searchbar.js"></script>
     <script src="https://kit.fontawesome.com/c498a47d8b.js" crossorigin="anonymous"></script>
   </body>
 </html>
