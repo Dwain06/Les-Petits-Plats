@@ -28,28 +28,28 @@
           </div>
 
           <div class="filters row">
-            <div class="filter__ingredient col-2 bg-primary rounded">
+            <div class="filter__ingredient col-2 bg-ingredients rounded">
               <p class="filter__ingredient--title">Ingrédients<i class="fa-solid fa-chevron-down"></i></p>
               <div class="filter__ingredient--expanded hidden">
-                <input class="form-control bg-primary" id="filter__ingredient--input" type="text" placeholder="Rechercher un ingrédient">
+                <input class="form-control bg-ingredients" id="filter__ingredient--input" type="text" placeholder="Rechercher un ingrédient">
                 <i class="fa-solid fa-chevron-up"></i>
                 <ul class="filter__ingredient--list d-flex flex-wrap p-0">
                 </ul>
               </div>
             </div>
-            <div class="filter__appareil col-2 bg-success rounded">
-              <p class="filter__appareil--title">Appareils<i class="fa-solid fa-chevron-down"></i></p>
-              <div class="filter__appareil--expanded hidden">
-                <input class="form-control bg-primary" id="filter__appareil--input" type="text" placeholder="Rechercher un ingrédient">
+            <div class="filter__appliance col-2 bg-appliance rounded">
+              <p class="filter__appliance--title">Appareils<i class="fa-solid fa-chevron-down"></i></p>
+              <div class="filter__appliance--expanded hidden">
+                <input class="form-control bg-appliance" id="filter__appliance--input" type="text" placeholder="Rechercher un ingrédient">
                 <i class="fa-solid fa-chevron-up"></i>
-                <ul class="filter__appareil--list d-flex flex-wrap p-0">
+                <ul class="filter__appliance--list d-flex flex-wrap p-0">
                 </ul>
               </div>
             </div>
-            <div class="filter__ustensil col-2 bg-danger rounded">
+            <div class="filter__ustensil col-2 bg-ustensils rounded">
               <p class="filter__ustensil--title">Ustensiles<i class="fa-solid fa-chevron-down"></i></p>
               <div class="filter__ustensil--expanded hidden">
-                <input class="form-control bg-primary" id="filter__ustensil--input" type="text" placeholder="Rechercher un ingrédient">
+                <input class="form-control bg-ustensils" id="filter__ustensil--input" type="text" placeholder="Rechercher un ingrédient">
                 <i class="fa-solid fa-chevron-up"></i>
                 <ul class="filter__ustensil--list d-flex flex-wrap p-0">
                 </ul>
@@ -67,7 +67,9 @@
 
     <script src="./scripts/data/recipes.js"></script>
     <script src="./scripts/factories/recipesFactory.js"></script>
-    <script src="./scripts/factories/filtersFactory.js"></script>
+    <script src="./scripts/filters/ingredientsFilter.js"></script>
+    <script src="./scripts/filters/applianceFilter.js"></script>
+    <script src="./scripts/filters/ustensilsFilter.js"></script>
     <script src="./scripts/pages/index.js"></script>
     <script src="./scripts/filters/searchbar.js"></script>
     <script src="https://kit.fontawesome.com/c498a47d8b.js" crossorigin="anonymous"></script>

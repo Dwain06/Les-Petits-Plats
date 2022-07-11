@@ -1,3 +1,15 @@
+.bg-ingredients {
+  background-color: #3282F7;
+}
+
+.bg-appliance {
+  background-color: #68D9A4;
+}
+
+.bg-ustensils {
+  background-color: #ED6454;
+}
+
 .hidden {
   display: none;
 }
@@ -7,7 +19,7 @@
 }
 
 ul {
-  max-height: 290px;
+  max-height: 230px;
   overflow-y: scroll;
 }
 ul::-webkit-scrollbar {
@@ -32,15 +44,15 @@ ul li {
   z-index: 1;
 }
 
-.filter__ingredient, .filter__appareil, .filter__ustensil {
+.filter__ingredient, .filter__appliance, .filter__ustensil {
   color: white;
   margin-right: 20px;
 }
-.filter__ingredient i, .filter__appareil i, .filter__ustensil i {
+.filter__ingredient i, .filter__appliance i, .filter__ustensil i {
   margin-left: 20px;
   cursor: pointer;
 }
-.filter__ingredient.col-2, .filter__appareil.col-2, .filter__ustensil.col-2 {
+.filter__ingredient.col-2, .filter__appliance.col-2, .filter__ustensil.col-2 {
   height: 70px;
   line-height: 70px;
   padding-left: 30px;
@@ -49,22 +61,25 @@ ul li {
   cursor: pointer;
 }
 
-.filter__ingredient--expanded {
+.filter__ingredient--expanded, .filter__appliance--expanded, .filter__ustensil--expanded {
   position: relative;
 }
-.filter__ingredient--expanded i {
+.filter__ingredient--expanded i, .filter__appliance--expanded i, .filter__ustensil--expanded i {
   position: absolute;
   top: 25px;
   right: 15px;
 }
 
-#filter__ingredient--input {
+#filter__ingredient--input, #filter__appliance--input, #filter__ustensil--input {
   width: 90%;
   color: white;
   border: none;
   padding: 20px 0 20px 0;
 }
-#filter__ingredient--input::placeholder {
+#filter__ingredient--input:focus-visible, #filter__appliance--input:focus-visible, #filter__ustensil--input:focus-visible {
+  background: none;
+}
+#filter__ingredient--input::placeholder, #filter__appliance--input::placeholder, #filter__ustensil--input::placeholder {
   font-weight: bold;
   color: rgba(255, 255, 255, 0.5);
 }
