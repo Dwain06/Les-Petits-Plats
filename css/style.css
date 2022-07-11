@@ -81,10 +81,13 @@ ul li {
 
 .filters{
     padding: 12px;
+    margin-bottom: 80px;
 }
 
 .filter__ingredient{
     color: white;
+    position: absolute;
+    z-index: 1;
 }
 
 .filter__ingredient.col-2{
