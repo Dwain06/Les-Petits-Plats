@@ -55,3 +55,70 @@
 .expand{
     display: block;
 }
+
+ul {
+    height: 290px;
+    overflow-y: scroll;
+}
+
+ul::-webkit-scrollbar {
+	width: 12px;
+    border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.3);
+}
+
+ul::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.6);
+}
+
+ul li {
+    flex: 33%;
+    list-style-type: none;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.filters{
+    padding: 12px;
+}
+
+.filter__ingredient{
+    color: white;
+}
+
+.filter__ingredient.col-2{
+    height: 70px;
+    line-height: 70px;
+    padding-left: 30px;
+    width: 170px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.filter__ingredient i{
+    margin-left: 20px;
+    cursor: pointer;
+}
+
+.filter__ingredient--expanded{
+    position: relative;
+}
+
+#filter__ingredient--input{
+    width: 90%;
+    color: white;
+    border: none;
+    padding: 20px 0 20px 0;
+}
+
+#filter__ingredient--input::placeholder{
+    font-weight: bold;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.filter__ingredient--expanded i{
+    position: absolute;
+    top: 25px;
+    right: 15px;
+}

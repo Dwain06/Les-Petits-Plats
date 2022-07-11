@@ -17,7 +17,7 @@ function createFilterIngredients(recipes) {
 
     arrayIngredients.map((ingredient) => {
         ingredientList.innerHTML += 
-        `<li class="list-group-item">${ingredient}</li>`
+        `<li class="">${ingredient}</li>`
         }
     );
 }
@@ -34,17 +34,15 @@ ingredientTitle.addEventListener("click", () => {
     }
 );
 
-ingredientChevronUp.addEventListener("click", () => {
-    ingredientExpanded.classList.add('hidden');
-    ingredientTitle.classList.remove('hidden');
-    }
-);
+ingredientChevronUp.addEventListener("click", () => closeFilter());
 
 //Close at click outside element
 document.addEventListener("click", (e) => {
-    if (!ingredientFilter.contains(e.target)) {
+    if (!ingredientFilter.contains(e.target)) closeFilter();
+});
+
+function closeFilter(){
     ingredientExpanded.classList.add('hidden');
     ingredientTitle.classList.remove('hidden');
-    }
-    }
-);
+    ingredientFilter.classList.replace("col-6", "col-2");
+}
