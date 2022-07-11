@@ -1,127 +1,129 @@
-#searchInput {
-    height: 70px;
-    border: none;
-    background: #E7E7E7;
+@keyframes lightboxIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.hidden {
+  display: none;
 }
 
-.searchbar{
-    position: relative;
-}
-
-.searchbar i{
-    position: absolute;
-    font-size: 30px;
-    right: 30px;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-.card{
-    border: none;
-}
-.card-text, .ingredients {
-    font-size: 12px;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 6;
-    overflow: hidden;
-}
-
-.ingredients p{
-    margin-bottom: 0;
-}
-
-.card-title h2, .card-title p, .card-title i {
-    font-size: 18px;
-}
-
-.card-title h2{
-    max-width: 300px;
-}
-
-.card-body {
-    height: 200px;
-    background: #E7E7E7;
-}
-
-.card-body i {
-    margin-right: 5px;
-}
-
-.hidden{
-    display: none;
-}
-
-.expand{
-    display: block;
+.expand {
+  display: block;
 }
 
 ul {
-    height: 290px;
-    overflow-y: scroll;
+  height: 290px;
+  overflow-y: scroll;
 }
-
 ul::-webkit-scrollbar {
-	width: 12px;
-    border-radius: 10px;
-	background-color: rgba(255, 255, 255, 0.3);
+  width: 12px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.3);
 }
-
 ul::-webkit-scrollbar-thumb {
-	border-radius: 10px;
-	background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.6);
 }
-
 ul li {
-    flex: 33%;
-    list-style-type: none;
-    padding-bottom: 5px;
-    cursor: pointer;
+  flex: 33%;
+  list-style-type: none;
+  padding-bottom: 5px;
+  cursor: pointer;
 }
 
-.filters{
-    padding: 12px;
-    margin-bottom: 80px;
+.filters {
+  padding: 12px;
+  margin-bottom: 80px;
 }
 
-.filter__ingredient{
-    color: white;
-    position: absolute;
-    z-index: 1;
+.filter__ingredient {
+  color: white;
+  position: absolute;
+  z-index: 1;
+}
+.filter__ingredient i {
+  margin-left: 20px;
+  cursor: pointer;
 }
 
-.filter__ingredient.col-2{
-    height: 70px;
-    line-height: 70px;
-    padding-left: 30px;
-    width: 170px;
-    font-weight: bold;
-    cursor: pointer;
+.filter__ingredient.col-2 {
+  height: 70px;
+  line-height: 70px;
+  padding-left: 30px;
+  width: 170px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
-.filter__ingredient i{
-    margin-left: 20px;
-    cursor: pointer;
+.filter__ingredient--expanded {
+  position: relative;
+}
+.filter__ingredient--expanded i {
+  position: absolute;
+  top: 25px;
+  right: 15px;
 }
 
-.filter__ingredient--expanded{
-    position: relative;
+#filter__ingredient--input {
+  width: 90%;
+  color: white;
+  border: none;
+  padding: 20px 0 20px 0;
+}
+#filter__ingredient--input::placeholder {
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.5);
 }
 
-#filter__ingredient--input{
-    width: 90%;
-    color: white;
-    border: none;
-    padding: 20px 0 20px 0;
+#searchInput {
+  height: 70px;
+  border: none;
+  background: #E7E7E7;
 }
 
-#filter__ingredient--input::placeholder{
-    font-weight: bold;
-    color: rgba(255, 255, 255, 0.5);
+.searchbar {
+  position: relative;
+}
+.searchbar i {
+  position: absolute;
+  font-size: 30px;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
-.filter__ingredient--expanded i{
-    position: absolute;
-    top: 25px;
-    right: 15px;
+.card {
+  border: none;
 }
+
+.card-text, .ingredients {
+  font-size: 12px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 6;
+  overflow: hidden;
+}
+
+.ingredients p {
+  margin-bottom: 0;
+}
+
+.card-title h2, .card-title p, .card-title i {
+  font-size: 18px;
+}
+.card-title h2 {
+  max-width: 300px;
+}
+
+.card-body {
+  height: 200px;
+  background: #E7E7E7;
+}
+.card-body i {
+  margin-right: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */
