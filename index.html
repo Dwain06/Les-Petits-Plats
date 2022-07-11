@@ -21,10 +21,23 @@
         <div class="container">
 
           <div class="row mb-3">
-            <div class="col">
-               <input class="form-control bg-light" id="searchInput" type="text" placeholder="Rechercher une recette">
+            <div class="col searchbar">
+              <input class="form-control" id="searchInput" type="text" placeholder="Rechercher une recette">
+              <i class="fa-solid fa-magnifying-glass"></i>
             </div>
-         </div>
+          </div>
+
+          <div class="filters row">
+            <div class="filter__ingredient col-2">
+              <p class="filter__ingredient--title">Ingrédients<i class="fa-solid fa-chevron-down"></i></p>
+              <div class="filter__ingredient--expanded hidden">
+                <input class="form-control" id="filter__ingredient--input" type="text" placeholder="Rechercher un ingrédient">
+                <i class="fa-solid fa-chevron-up "></i>
+                <ul class="filter__ingredient--list list-group">
+                </ul>
+              </div>
+            </div>
+          </div>
 
           <div id="recipes" class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
             <!-- recipes constructor here -->
@@ -34,9 +47,9 @@
       </div>
     </main>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
     <script src="./scripts/data/recipes.js"></script>
     <script src="./scripts/factories/recipesFactory.js"></script>
+    <script src="./scripts/factories/filtersFactory.js"></script>
     <script src="./scripts/pages/index.js"></script>
     <script src="./scripts/filters/searchbar.js"></script>
     <script src="https://kit.fontawesome.com/c498a47d8b.js" crossorigin="anonymous"></script>

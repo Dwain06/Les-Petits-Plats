@@ -36,7 +36,7 @@ class RecipesFactory {
       img.classList.add("card-img-top");
       img.setAttribute("src", "https://dummyimage.com/420x225/C7BEBE/6c757d.jpg");
       divCardTitle.classList.add("card-title", "d-flex", "justify-content-between", "align-items-baseline");
-      divCardBody.classList.add("card-body", "bg-light");
+      divCardBody.classList.add("card-body");
       divRow.classList.add("row");
       this.divIngredients.classList.add("col", "ingredients");
       divCardText.classList.add("col", "card-text");

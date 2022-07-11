@@ -1,3 +1,24 @@
+#searchInput {
+    height: 70px;
+    border: none;
+    background: #E7E7E7;
+}
+
+.searchbar{
+    position: relative;
+}
+
+.searchbar i{
+    position: absolute;
+    font-size: 30px;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.card{
+    border: none;
+}
 .card-text, .ingredients {
     font-size: 12px;
     display: -webkit-box;
@@ -20,8 +41,17 @@
 
 .card-body {
     height: 200px;
+    background: #E7E7E7;
 }
 
-i {
+.card-body i {
     margin-right: 5px;
+}
+
+.hidden{
+    display: none;
+}
+
+.expand{
+    display: block;
 }
