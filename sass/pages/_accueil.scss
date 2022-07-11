@@ -1,0 +1,33 @@
+.card{
+    border: none;
+}
+
+.card-text, .ingredients {
+    font-size: 12px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 6;
+    overflow: hidden;
+}
+
+.ingredients p{
+    margin-bottom: 0;
+}
+
+.card-title {
+    h2, p, i {
+        font-size: 18px;
+    } 
+    h2 {
+        max-width: 300px;
+    }
+}
+
+.card-body {
+    height: 200px;
+    background: #E7E7E7;
+
+    i {
+        margin-right: 5px;
+    }
+}
