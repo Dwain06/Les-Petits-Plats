@@ -76,9 +76,11 @@ ul {
     color: white;
     border: none;
     padding: 20px 0 20px 0;
+    font-weight: bold;
 
     &:focus-visible{
         background: none;
+        outline: none;
     }
     &::placeholder{
         font-weight: bold;

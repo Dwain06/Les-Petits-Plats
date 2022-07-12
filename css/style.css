@@ -75,9 +75,11 @@ ul li {
   color: white;
   border: none;
   padding: 20px 0 20px 0;
+  font-weight: bold;
 }
 #filter__ingredient--input:focus-visible, #filter__appliance--input:focus-visible, #filter__ustensil--input:focus-visible {
   background: none;
+  outline: none;
 }
 #filter__ingredient--input::placeholder, #filter__appliance--input::placeholder, #filter__ustensil--input::placeholder {
   font-weight: bold;
