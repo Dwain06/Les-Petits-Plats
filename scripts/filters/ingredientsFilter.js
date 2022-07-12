@@ -7,12 +7,20 @@ function createFilterIngredients(recipes) {
         const ingredients = recipe.ingredients;
 
         for (let i = 0; i < ingredients.length; i++) {
-            arrayIngredients.push(ingredients[i].ingredient);
+            let strIngredient = ingredients[i].ingredient;
+            if (!arrayIngredients.includes(strIngredient.toString())) {
+                console.log(arrayIngredients.includes(strIngredient.toString()));
+                arrayIngredients.push(ingredients[i].ingredient);
+                // console.log(arrayIngredients);
+            }
         }
     });
-
-    //Delete duplicate elements
-    arrayIngredients = [...new Set(arrayIngredients)];
+    console.log(arrayIngredients);
+    // //Delete duplicate elements
+    // arrayIngredients = [...new Set(arrayIngredients)];
+    // console.log(arrayIngredients);
+    // arrayIngredients = [...new Set(arrayIngredients)];
+    // console.log(arrayIngredients);
 
     arrayIngredients.map((ingredient) => {
         ingredientList.innerHTML += 
@@ -23,6 +31,7 @@ function createFilterIngredients(recipes) {
 
 const ingredientFilter = document.querySelector(".filter__ingredient");
 const ingredientTitle = document.querySelector(".filter__ingredient--title");
+const ingredientList = document.querySelector(".filter__ingredient--list");
 const ingredientExpanded = document.querySelector(".filter__ingredient--expanded");
 const ingredientChevronUp = document.querySelector(".filter__ingredient--expanded .fa-solid.fa-chevron-up");
 
@@ -45,3 +54,8 @@ function closeIngredientFilter(){
     ingredientTitle.classList.remove('hidden');
     ingredientFilter.classList.replace("col-6", "col-2");
 }
+
+ingredientList.addEventListener("click", (e) => {
+    console.log(e.target.firstChild.data);
+    }
+);

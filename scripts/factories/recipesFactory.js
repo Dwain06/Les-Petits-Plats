@@ -7,9 +7,14 @@ class RecipesFactory {
         this.ingredients = data.ingredients;
     }
 
+    
+
     getIngredients() {
       for (let i = 0; i < this.ingredients.length; i++) {
-        if (this.ingredients[i].unit == undefined) {
+        if (this.ingredients[i].quantity == undefined){
+          this.divIngredients.innerHTML +=
+          `<p><span class="fw-bold">${this.ingredients[i].ingredient}</p>`;
+        } else if (this.ingredients[i].unit == undefined) {
           this.divIngredients.innerHTML +=
           `<p><span class="fw-bold">${this.ingredients[i].ingredient} :</span> ${this.ingredients[i].quantity}</p>`;
         } else {
