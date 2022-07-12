@@ -1,6 +1,6 @@
 const search = document.getElementById("searchInput");
 const els = document.querySelectorAll("#recipes > .col");
-
+ console.log("test");
 search.addEventListener("keyup", function(e) {
     Array.prototype.forEach.call(els, function(el) {
     console.log(el.textContent.trim().indexOf(search.value));
