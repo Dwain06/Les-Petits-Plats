@@ -32,7 +32,7 @@ ul::-webkit-scrollbar-thumb {
   background-color: rgba(255, 255, 255, 0.6);
 }
 ul li {
-  flex: 33%;
+  flex: 0 2 33%;
   list-style-type: none;
   padding-bottom: 5px;
   cursor: pointer;

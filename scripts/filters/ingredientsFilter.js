@@ -7,20 +7,12 @@ function createFilterIngredients(recipes) {
         const ingredients = recipe.ingredients;
 
         for (let i = 0; i < ingredients.length; i++) {
-            let strIngredient = ingredients[i].ingredient;
-            if (!arrayIngredients.includes(strIngredient.toString())) {
-                console.log(arrayIngredients.includes(strIngredient.toString()));
-                arrayIngredients.push(ingredients[i].ingredient);
-                // console.log(arrayIngredients);
+            let strIngredient = capitalizeFirstLetter(ingredients[i].ingredient);
+            if (!arrayIngredients.includes(strIngredient)) {
+                arrayIngredients.push(strIngredient);
             }
         }
     });
-    console.log(arrayIngredients);
-    // //Delete duplicate elements
-    // arrayIngredients = [...new Set(arrayIngredients)];
-    // console.log(arrayIngredients);
-    // arrayIngredients = [...new Set(arrayIngredients)];
-    // console.log(arrayIngredients);
 
     arrayIngredients.map((ingredient) => {
         ingredientList.innerHTML += 

@@ -4,15 +4,13 @@ function createFilterUstensils(recipes) {
 
 
     recipes.forEach((recipe) => {
-        const ustensils = recipe.ustensils;
-
-        for (let i = 0; i < ustensils.length; i++) {
-            arrayUstensils.push(ustensils[i]);
+        for (let i = 0; i < recipe.ustensils.length; i++) {
+            let strUstensils = capitalizeFirstLetter(recipe.ustensils[i]);
+            if (!arrayUstensils.includes(strUstensils)) {
+                arrayUstensils.push(strUstensils);
+            }
         }
     });
-
-    //Delete duplicate elements
-    arrayUstensils = [...new Set(arrayUstensils)];
 
     arrayUstensils.map((ustensil) => {
         ustensilList.innerHTML += 

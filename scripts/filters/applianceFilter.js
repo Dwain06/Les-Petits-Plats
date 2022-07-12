@@ -4,14 +4,13 @@ function createFilterAppliance(recipes) {
 
 
     recipes.forEach((recipe) => {
-
         for (let i = 0; i < recipe.appliance.length; i++) {
-            arrayAppliance.push(recipe.appliance);
+            let strAppliance = capitalizeFirstLetter(recipe.appliance);
+            if (!arrayAppliance.includes(strAppliance)) {
+                arrayAppliance.push(strAppliance);
+            }
         }
     });
-
-    //Delete duplicate elements
-    arrayAppliance = [...new Set(arrayAppliance)];
 
     arrayAppliance.map((appliance) => {
         applianceList.innerHTML += 
