@@ -1,17 +1,16 @@
 const search = document.getElementById("searchInput");
-const els = document.querySelectorAll("#recipes > .col");
- console.log("test");
+const recipeCards = document.querySelectorAll("#recipes > .col");
 search.addEventListener("keyup", function(e) {
-    Array.prototype.forEach.call(els, function(el) {
-    console.log(el.textContent.trim().indexOf(search.value));
+    Array.prototype.forEach.call(recipeCards, function(recipeCard) {
+    console.log(recipeCard.textContent.trim().indexOf(search.value));
         if (search.value.length > 2){
-            if (el.textContent.trim().indexOf(search.value) > -1) {
-                el.style.display = 'block';
+            if (recipeCard.textContent.trim().indexOf(search.value) > -1) {
+                recipeCard.style.display = 'block';
             } else {
-                el.style.display = 'none';
+                recipeCard.style.display = 'none';
             }
         } else {
-            el.style.display = null;
+            recipeCard.style.display = null;
         }
     });
 });

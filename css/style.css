@@ -90,6 +90,16 @@ ul li {
   height: 70px;
   border: none;
   background: #E7E7E7;
+  display: block;
+  width: 100%;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  border-radius: 0.375rem;
+}
+#searchInput:focus {
+  outline-color: #d04f4f;
 }
 
 .searchbar {
@@ -101,6 +111,25 @@ ul li {
   right: 30px;
   top: 50%;
   transform: translateY(-50%);
+}
+
+button {
+  border: none;
+  color: white;
+  padding: 10px;
+  margin-right: 5px;
+}
+button i {
+  margin-left: 10px;
+}
+button.ingredient {
+  background-color: #3282F7;
+}
+button.appliance {
+  background-color: #68D9A4;
+}
+button.ustensil {
+  background-color: #ED6454;
 }
 
 #recipes {

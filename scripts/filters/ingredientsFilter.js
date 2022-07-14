@@ -48,24 +48,19 @@ function closeIngredientFilter(){
 }
 
 ingredientList.addEventListener("click", (e) => {
-    addTag(e.target.firstChild.data);
+    addIngredientTag(e.target.firstChild.data);
     }
 );
 
-function addTag(data) {
+function addIngredientTag(data) {
     document.querySelector("#tags").innerHTML += 
-        `<button onclick="dremove(this)" class="tag">${data}<i class="fa-solid fa-circle-xmark"></i></button>`;
+        `<button class="tag ingredient rounded">${data}<i class="fa-solid fa-circle-xmark"></i></button>`;
 }
 
-function dremove(el) {
-    console.log(el);
-    el.remove();
-}
-
-// const tags = document.querySelectorAll(".tag");
-// tags.forEach((tag) => {
-//     console.log(tag);
-//     tag.addEventListener("click", (e) => {
-//         console.log("click");
-//     })
-// });
+const tags = document.querySelector("#tags");
+tags.addEventListener("click", (e) => {
+    if (e.target.id !== "tags"){
+        console.log(e.target.firstChild.data);
+        e.target.remove();
+    }    
+});

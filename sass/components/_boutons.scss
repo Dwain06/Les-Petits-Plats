@@ -1,0 +1,19 @@
+button {
+    border: none;
+    color: white;
+    padding: 10px;
+    margin-right: 5px;
+    
+    i{
+        margin-left: 10px;
+    }
+    &.ingredient {
+        background-color: $color-ingredient;
+    }
+    &.appliance {
+        background-color: $color-appliance;
+    }
+    &.ustensil {
+        background-color: $color-ustensil;
+    }
+}

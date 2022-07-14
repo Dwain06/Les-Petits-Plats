@@ -21,6 +21,7 @@ function createFilterAppliance(recipes) {
 
 const applianceFilter = document.querySelector(".filter__appliance");
 const applianceTitle = document.querySelector(".filter__appliance--title");
+const applianceList = document.querySelector(".filter__appliance--list");
 const applianceExpanded = document.querySelector(".filter__appliance--expanded");
 const applianceChevronUp = document.querySelector(".filter__appliance--expanded .fa-solid.fa-chevron-up");
 
@@ -42,4 +43,14 @@ function closeFilter(){
     applianceExpanded.classList.add('hidden');
     applianceTitle.classList.remove('hidden');
     applianceFilter.classList.replace("col-6", "col-2");
+}
+
+applianceList.addEventListener("click", (e) => {
+    addApplianceTag(e.target.firstChild.data);
+    }
+);
+
+function addApplianceTag(data) {
+    document.querySelector("#tags").innerHTML += 
+        `<button class="tag appliance rounded">${data}<i class="fa-solid fa-circle-xmark"></i></button>`;
 }

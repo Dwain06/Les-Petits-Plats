@@ -21,6 +21,7 @@ function createFilterUstensils(recipes) {
 
 const ustensilFilter = document.querySelector(".filter__ustensil");
 const ustensilTitle = document.querySelector(".filter__ustensil--title");
+const ustensilList = document.querySelector(".filter__ustensil--list");
 const ustensilExpanded = document.querySelector(".filter__ustensil--expanded");
 const ustensilChevronUp = document.querySelector(".filter__ustensil--expanded .fa-solid.fa-chevron-up");
 
@@ -42,4 +43,14 @@ function closeUstensilFilter(){
     ustensilExpanded.classList.add('hidden');
     ustensilTitle.classList.remove('hidden');
     ustensilFilter.classList.replace("col-6", "col-2");
+}
+
+ustensilList.addEventListener("click", (e) => {
+    addUstensilTag(e.target.firstChild.data);
+    }
+);
+
+function addUstensilTag(data) {
+    document.querySelector("#tags").innerHTML += 
+        `<button class="tag ustensil rounded">${data}<i class="fa-solid fa-circle-xmark"></i></button>`;
 }
