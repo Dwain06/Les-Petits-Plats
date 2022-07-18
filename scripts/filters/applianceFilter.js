@@ -52,6 +52,7 @@ function closeApplianceFilter(){
 
 //Add tag and execute search results
 applianceList.addEventListener("click", (e) => {
+    appSearch.value = "";
     addApplianceTag(e.target.firstChild.data);
     researchInputTermsApp.push(e.target.firstChild.data);
     search();

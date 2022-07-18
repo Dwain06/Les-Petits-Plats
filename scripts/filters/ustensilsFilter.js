@@ -51,6 +51,7 @@ function closeUstensilFilter(){
 
 //Add tag and execute search results
 ustensilList.addEventListener("click", (e) => {
+    ustSearch.value = "";
     addUstTag(e.target.firstChild.data);
     researchInputTermsUst.push(e.target.firstChild.data);
     search();    

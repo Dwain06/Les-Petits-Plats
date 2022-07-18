@@ -16,7 +16,7 @@ function createFilterIngredients(recipes) {
             }
         }
     });
-
+    
     arrayIngredients.map((ingredient) => {
         ingredientList.innerHTML += 
         `<li>${ingredient}</li>`
@@ -51,6 +51,7 @@ function closeIngredientFilter(){
 
 //Add tag and execute search results
 ingredientList.addEventListener("click", (e) => {
+    ingSearch.value = "";
     addIngTag(e.target.firstChild.data);
     researchInputTermsIng.push(e.target.firstChild.data);
     search();
