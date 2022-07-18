@@ -41,6 +41,8 @@ ul li {
 .filters {
   padding: 12px;
   position: absolute;
+  left: 10px;
+  right: 10px;
   z-index: 1;
 }
 
@@ -131,6 +133,10 @@ button.appliance {
 }
 button.ustensil {
   background-color: #ED6454;
+}
+
+.container {
+  position: relative;
 }
 
 #recipes {

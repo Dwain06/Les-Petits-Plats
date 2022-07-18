@@ -43,7 +43,7 @@ function researchUstensils(datas) {
         const ustensils = recipe.ustensils.map(ust => {
             return capitalizeFirstLetter(ust); //On s'assure que la casse est confrome pour la recherche
         });
-        const diff = researchInputTermsUst.filter(x => !ustensils.includes(x)); // Liste de l'ensemble des tag n'étant pas dans recipe.ustensils
+        const diff = researchInputTermsUst.filter(x => !ustensils.includes(x)); //Liste de l'ensemble des tag n'étant pas dans recipe.ustensils
         
         return diff.length === 0;
     });
