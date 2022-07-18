@@ -121,6 +121,7 @@ button {
 }
 button i {
   margin-left: 10px;
+  pointer-events: none;
 }
 button.ingredient {
   background-color: #3282F7;

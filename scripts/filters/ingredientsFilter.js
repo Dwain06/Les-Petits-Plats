@@ -1,15 +1,19 @@
+let arrayIngredients = [];
+let researchInputTermsIng = [];
+
 function createFilterIngredients(recipes) {
     const ingredientList = document.querySelector(".filter__ingredient--list");
-    let arrayIngredients = [];
-
+    ingredientList.innerHTML = "";
+    arrayIngredients = [];
 
     recipes.forEach((recipe) => {
         const ingredients = recipe.ingredients;
-
         for (let i = 0; i < ingredients.length; i++) {
             let strIngredient = capitalizeFirstLetter(ingredients[i].ingredient);
             if (!arrayIngredients.includes(strIngredient)) {
+                if (!researchInputTermsIng.includes(strIngredient)) {
                 arrayIngredients.push(strIngredient);
+                }
             }
         }
     });
@@ -17,8 +21,7 @@ function createFilterIngredients(recipes) {
     arrayIngredients.map((ingredient) => {
         ingredientList.innerHTML += 
         `<li>${ingredient}</li>`
-        }
-    );
+    });
 }
 
 const ingredientFilter = document.querySelector(".filter__ingredient");
@@ -47,20 +50,20 @@ function closeIngredientFilter(){
     ingredientFilter.classList.replace("col-6", "col-2");
 }
 
+//Add tag and execute search results
 ingredientList.addEventListener("click", (e) => {
     addIngredientTag(e.target.firstChild.data);
-    }
-);
+    researchInputTermsIng.push(e.target.firstChild.data);
+    search();
+});
 
 function addIngredientTag(data) {
     document.querySelector("#tags").innerHTML += 
-        `<button class="tag ingredient rounded">${data}<i class="fa-solid fa-circle-xmark"></i></button>`;
+        `<button onclick="removeIngTag(this)" class="tag ingredient rounded">${data}<i class="fa-regular fa-circle-xmark"></i></button>`;
 }
 
-const tags = document.querySelector("#tags");
-tags.addEventListener("click", (e) => {
-    if (e.target.id !== "tags"){
-        console.log(e.target.firstChild.data);
-        e.target.remove();
-    }    
-});
+function removeIngTag(e) {
+    researchInputTermsIng.splice(researchInputTermsIng.indexOf(e.data), 1);
+    e.remove();
+    search()
+}

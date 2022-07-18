@@ -6,6 +6,7 @@ button {
     
     i{
         margin-left: 10px;
+        pointer-events: none;
     }
     &.ingredient {
         background-color: $color-ingredient;

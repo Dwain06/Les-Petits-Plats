@@ -1,5 +1,8 @@
+let researchInputTermsUst = [];
+
 function createFilterUstensils(recipes) {
     const ustensilList = document.querySelector(".filter__ustensil--list");
+    ustensilList.innerHTML = "";
     let arrayUstensils = [];
 
 
@@ -52,5 +55,5 @@ ustensilList.addEventListener("click", (e) => {
 
 function addUstensilTag(data) {
     document.querySelector("#tags").innerHTML += 
-        `<button class="tag ustensil rounded">${data}<i class="fa-solid fa-circle-xmark"></i></button>`;
+        `<button class="tag ustensil rounded">${data}<i class="fa-regular fa-circle-xmark"></i></button>`;
 }

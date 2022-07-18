@@ -70,6 +70,7 @@ class RecipesFactory {
     static createRecipeCard(recipes) {
       //Create section for each recipe in DOM
       const divRecipes = document.getElementById("recipes");
+      divRecipes.innerHTML = "";
       recipes.forEach((recipe) => {
           const recipesFactory = new RecipesFactory(recipe);
           const recipeCardDOM = recipesFactory.getRecipeCardDOM();

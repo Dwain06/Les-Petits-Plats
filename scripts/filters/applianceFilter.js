@@ -1,5 +1,8 @@
+let researchInputTermsIApp = [];
+
 function createFilterAppliance(recipes) {
     const applianceList = document.querySelector(".filter__appliance--list");
+    applianceList.innerHTML = "";
     let arrayAppliance = [];
 
 
@@ -47,10 +50,17 @@ function closeFilter(){
 
 applianceList.addEventListener("click", (e) => {
     addApplianceTag(e.target.firstChild.data);
-    }
-);
+    researchInputTermsIApp.push(e.target.firstChild.data);
+    search();
+});
 
 function addApplianceTag(data) {
     document.querySelector("#tags").innerHTML += 
-        `<button class="tag appliance rounded">${data}<i class="fa-solid fa-circle-xmark"></i></button>`;
+        `<button onclick="removeAppTag(this)" class="tag appliance rounded">${data}<i class="fa-regular fa-circle-xmark"></i></button>`;
+}
+function removeAppTag(e) {
+    researchInputTermsIApp.splice(researchInputTermsIApp.indexOf(e.data), 1);
+    console.warn(researchInputTermsIApp)
+    e.remove();
+    search()
 }
