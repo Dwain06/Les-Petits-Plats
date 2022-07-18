@@ -8,16 +8,15 @@ function search() {
 
 function researchInput(datas) {
     const value = searchInput.value;
-    if (value.length <= 2) {
-        return datas;
-    }
+    if (value.length <= 2) return datas;
 
-    let arraySorted = datas.filter(recipe => {
-        return reciperToString(recipe).includes(value)
+    return datas.filter(recipe => {
+        return reciperToString(recipe).includes(value);
     });
-    console.log(arraySorted);
+}
 
-    return arraySorted;
+function reciperToString(recipe) {
+    return recipe.name.toLowerCase() + ' ' + recipe.description.toLowerCase() + ' ' + recipe.ingredients.reduce((previous, current) => previous + ' ' + current.ingredient, "");
 }
 
 function researchIngredient(datas) {
@@ -30,23 +29,26 @@ function researchIngredient(datas) {
 }
 
 function researchAppliance(datas) {
-    if(researchInputTermsIApp.length === 0){
+    if(researchInputTermsApp.length === 0){
         return datas;
     }
 
     return datas.filter(recipe => {
-        return researchInputTermsIApp.includes(recipe.appliance);
+        return researchInputTermsApp.includes(recipe.appliance);
     });
-}
-
-function reciperToString(recipe) {
-    return recipe.name.toLowerCase() + ' ' + recipe.description.toLowerCase() + ' ' + recipe.ingredients.reduce((previous, current) => previous + ' ' + current.ingredient, "");
 }
 
 function researchUstensils(datas) {
     return datas.filter(recipe => {
-        const diff = researchInputTermsUst.filter(x => !recipe.ustensils.includes(x)); // Liste de l'ensemble des tag n'étant pas dans recipe.ustensils
+        const ustensils = recipe.ustensils.map(ust => {
+            return capitalizeFirstLetter(ust); //On s'assure que la casse est confrome pour la recherche
+        });
+        const diff = researchInputTermsUst.filter(x => !ustensils.includes(x)); // Liste de l'ensemble des tag n'étant pas dans recipe.ustensils
         
         return diff.length === 0;
     });
+}
+
+function capitalizeFirstLetter(string) {
+    return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }

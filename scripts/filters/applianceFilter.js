@@ -1,16 +1,18 @@
-let researchInputTermsIApp = [];
+let researchInputTermsApp = [];
 
 function createFilterAppliance(recipes) {
     const applianceList = document.querySelector(".filter__appliance--list");
     applianceList.innerHTML = "";
     let arrayAppliance = [];
 
-
     recipes.forEach((recipe) => {
-        for (let i = 0; i < recipe.appliance.length; i++) {
-            let strAppliance = capitalizeFirstLetter(recipe.appliance);
-            if (!arrayAppliance.includes(strAppliance)) {
-                arrayAppliance.push(strAppliance);
+        const appliance = recipe.appliance;
+        for (let i = 0; i < appliance.length; i++) {
+            let strAppliance = capitalizeFirstLetter(appliance);
+            if (!arrayAppliance.includes(strAppliance)) { //Si un ingrédient est déjà présent dans la liste, on ne l'ajoute pas
+                if (!researchInputTermsApp.includes(strAppliance)) { //Si un tag est selectionné, ne pas afficher son nom dans la liste des ingredients
+                    arrayAppliance.push(strAppliance);
+                }
             }
         }
     });
@@ -28,6 +30,7 @@ const applianceList = document.querySelector(".filter__appliance--list");
 const applianceExpanded = document.querySelector(".filter__appliance--expanded");
 const applianceChevronUp = document.querySelector(".filter__appliance--expanded .fa-solid.fa-chevron-up");
 
+//Expand Tag list at click
 applianceTitle.addEventListener("click", () => {
     applianceExpanded.classList.remove('hidden');
     applianceTitle.classList.add('hidden');
@@ -35,22 +38,22 @@ applianceTitle.addEventListener("click", () => {
     }
 );
 
-applianceChevronUp.addEventListener("click", () => closeFilter());
-
-//Close at click outside element
+//Close at click outside element or on chevron
+applianceChevronUp.addEventListener("click", () => closeApplianceFilter());
 document.addEventListener("click", (e) => {
-    if (!applianceFilter.contains(e.target)) closeFilter();
+    if (!applianceFilter.contains(e.target)) closeApplianceFilter();
 });
 
-function closeFilter(){
+function closeApplianceFilter(){
     applianceExpanded.classList.add('hidden');
     applianceTitle.classList.remove('hidden');
     applianceFilter.classList.replace("col-6", "col-2");
 }
 
+//Add tag and execute search results
 applianceList.addEventListener("click", (e) => {
     addApplianceTag(e.target.firstChild.data);
-    researchInputTermsIApp.push(e.target.firstChild.data);
+    researchInputTermsApp.push(e.target.firstChild.data);
     search();
 });
 
@@ -58,9 +61,9 @@ function addApplianceTag(data) {
     document.querySelector("#tags").innerHTML += 
         `<button onclick="removeAppTag(this)" class="tag appliance rounded">${data}<i class="fa-regular fa-circle-xmark"></i></button>`;
 }
+
 function removeAppTag(e) {
-    researchInputTermsIApp.splice(researchInputTermsIApp.indexOf(e.data), 1);
-    console.warn(researchInputTermsIApp)
+    researchInputTermsApp.splice(researchInputTermsApp.indexOf(e.data), 1); //Supprime le tag des termes à rechercher
     e.remove();
     search()
 }

@@ -5,12 +5,14 @@ function createFilterUstensils(recipes) {
     ustensilList.innerHTML = "";
     let arrayUstensils = [];
 
-
     recipes.forEach((recipe) => {
-        for (let i = 0; i < recipe.ustensils.length; i++) {
-            let strUstensils = capitalizeFirstLetter(recipe.ustensils[i]);
-            if (!arrayUstensils.includes(strUstensils)) {
-                arrayUstensils.push(strUstensils);
+        const ustensils = recipe.ustensils;
+        for (let i = 0; i < ustensils.length; i++) {
+            let strUstensils = capitalizeFirstLetter(ustensils[i]);
+            if (!arrayUstensils.includes(strUstensils)) { //Si un ingrédient est déjà présent dans la liste, on ne l'ajoute pas
+                if (!researchInputTermsUst.includes(strUstensils)) { //Si un tag est selectionné, ne pas afficher son nom dans la liste des ingredients
+                    arrayUstensils.push(strUstensils);
+                }
             }
         }
     });
@@ -35,9 +37,8 @@ ustensilTitle.addEventListener("click", () => {
     }
 );
 
+//Close at click outside element or on chevron
 ustensilChevronUp.addEventListener("click", () => closeUstensilFilter());
-
-//Close at click outside element
 document.addEventListener("click", (e) => {
     if (!ustensilFilter.contains(e.target)) closeUstensilFilter();
 });
@@ -48,12 +49,20 @@ function closeUstensilFilter(){
     ustensilFilter.classList.replace("col-6", "col-2");
 }
 
+//Add tag and execute search results
 ustensilList.addEventListener("click", (e) => {
-    addUstensilTag(e.target.firstChild.data);
-    }
-);
+    addUstTag(e.target.firstChild.data);
+    researchInputTermsUst.push(e.target.firstChild.data);
+    search();    
+});
 
-function addUstensilTag(data) {
+function addUstTag(data) {
     document.querySelector("#tags").innerHTML += 
-        `<button class="tag ustensil rounded">${data}<i class="fa-regular fa-circle-xmark"></i></button>`;
+        `<button onclick="removeIngTag(this)" class="tag ustensil rounded">${data}<i class="fa-regular fa-circle-xmark"></i></button>`;
+}
+
+function removeUstTag(e) {
+    researchInputTermsUst.splice(researchInputTermsUst.indexOf(e.data), 1); //Supprime le tag des termes à rechercher
+    e.remove();
+    search()
 }

@@ -1,17 +1,16 @@
-let arrayIngredients = [];
 let researchInputTermsIng = [];
 
 function createFilterIngredients(recipes) {
     const ingredientList = document.querySelector(".filter__ingredient--list");
     ingredientList.innerHTML = "";
-    arrayIngredients = [];
+    let arrayIngredients = [];
 
     recipes.forEach((recipe) => {
         const ingredients = recipe.ingredients;
         for (let i = 0; i < ingredients.length; i++) {
             let strIngredient = capitalizeFirstLetter(ingredients[i].ingredient);
-            if (!arrayIngredients.includes(strIngredient)) {
-                if (!researchInputTermsIng.includes(strIngredient)) {
+            if (!arrayIngredients.includes(strIngredient)) { //Si un ingrédient est déjà présent dans la liste, on ne l'ajoute pas
+                if (!researchInputTermsIng.includes(strIngredient)) { //Si un tag est selectionné, ne pas afficher son nom dans la liste des ingredients
                 arrayIngredients.push(strIngredient);
                 }
             }
@@ -30,6 +29,7 @@ const ingredientList = document.querySelector(".filter__ingredient--list");
 const ingredientExpanded = document.querySelector(".filter__ingredient--expanded");
 const ingredientChevronUp = document.querySelector(".filter__ingredient--expanded .fa-solid.fa-chevron-up");
 
+//Expand Tag list at click
 ingredientTitle.addEventListener("click", () => {
     ingredientExpanded.classList.remove('hidden');
     ingredientTitle.classList.add('hidden');
@@ -37,9 +37,8 @@ ingredientTitle.addEventListener("click", () => {
     }
 );
 
+//Close at click outside element or on chevron
 ingredientChevronUp.addEventListener("click", () => closeIngredientFilter());
-
-//Close at click outside element
 document.addEventListener("click", (e) => {
     if (!ingredientFilter.contains(e.target)) closeIngredientFilter();
 });
@@ -52,18 +51,18 @@ function closeIngredientFilter(){
 
 //Add tag and execute search results
 ingredientList.addEventListener("click", (e) => {
-    addIngredientTag(e.target.firstChild.data);
+    addIngTag(e.target.firstChild.data);
     researchInputTermsIng.push(e.target.firstChild.data);
     search();
 });
 
-function addIngredientTag(data) {
+function addIngTag(data) {
     document.querySelector("#tags").innerHTML += 
         `<button onclick="removeIngTag(this)" class="tag ingredient rounded">${data}<i class="fa-regular fa-circle-xmark"></i></button>`;
 }
 
 function removeIngTag(e) {
-    researchInputTermsIng.splice(researchInputTermsIng.indexOf(e.data), 1);
+    researchInputTermsIng.splice(researchInputTermsIng.indexOf(e.data), 1); //Supprime le tag des termes à rechercher
     e.remove();
     search()
 }
