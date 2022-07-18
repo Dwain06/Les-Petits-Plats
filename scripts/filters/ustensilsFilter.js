@@ -58,7 +58,7 @@ ustensilList.addEventListener("click", (e) => {
 
 function addUstTag(data) {
     document.querySelector("#tags").innerHTML += 
-        `<button onclick="removeIngTag(this)" class="tag ustensil rounded">${data}<i class="fa-regular fa-circle-xmark"></i></button>`;
+        `<button onclick="removeUstTag(this)" class="tag ustensil rounded">${data}<i class="fa-regular fa-circle-xmark"></i></button>`;
 }
 
 function removeUstTag(e) {
