@@ -6,6 +6,7 @@ function search() {
     init(filtredData);
 }
 
+
 function researchInput(datas) {
     const value = searchInput.value;
     if (value.length <= 2) return datas;
@@ -52,3 +53,4 @@ function researchUstensils(datas) {
 function capitalizeFirstLetter(string) {
     return string.charAt(0).toUpperCase() + string.slice(1).toLowerCase();
 }
+

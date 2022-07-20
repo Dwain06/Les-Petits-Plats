@@ -5,7 +5,7 @@ searchInput.addEventListener("keyup", function() {
     search();
 });
 
-//Searchbar of tags
+//Searchbar of ingredient tags
 const ingSearch = document.getElementById("filter__ingredient--input");
 
 ingSearch.addEventListener("keyup", function() {
@@ -18,7 +18,7 @@ ingSearch.addEventListener("keyup", function() {
         }
     });
 });
-//Searchbar of tags
+//Searchbar of appliance tags
 const appSearch = document.getElementById("filter__appliance--input");
 
 appSearch.addEventListener("keyup", function() {
@@ -31,7 +31,7 @@ appSearch.addEventListener("keyup", function() {
         }
     });
 });
-//Searchbar of tags
+//Searchbar of ustensil tags
 const ustSearch = document.getElementById("filter__ustensil--input");
 
 ustSearch.addEventListener("keyup", function() {
