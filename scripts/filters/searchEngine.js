@@ -22,9 +22,11 @@ function reciperToString(recipe) {
 
 function researchIngredient(datas) {
     return datas.filter(recipe => {
-        const ingNameList = recipe.ingredients.map(ing => ing.ingredient); // Liste des noms d'ingredient
+        const ingNameList = recipe.ingredients.map(ing => capitalizeFirstLetter(ing.ingredient)); // Liste des noms d'ingredient, avec casse conforme à la recherche
+        console.log(ingNameList);
         const diff = researchInputTermsIng.filter(x => !ingNameList.includes(x)); // Liste de l'ensemble des tag n'étant pas dans ingNameList
-        
+        console.log(diff);
+
         return diff.length === 0;
     });
 }
