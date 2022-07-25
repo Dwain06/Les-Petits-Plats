@@ -35,11 +35,11 @@ function search() {
 
 function researchInput() {
     arrayIdInput = [];
-    recipesData.forEach(recipe => {
-        if (reciperToString(recipe).includes(searchInput.value)) {
-            arrayIdInput.push(recipe.id);
+    for (let i = 0; i < recipesData.length; i++) {
+        if (reciperToString(recipesData[i]).includes(searchInput.value)) {
+            arrayIdInput.push(recipesData[i].id);
         }
-    });
+    }
     arrayId.push(arrayIdInput);
 }
 
@@ -49,35 +49,35 @@ function reciperToString(recipe) {
 
 function researchIngredient() {
     arrayIdIng = [];
-    recipesData.forEach(recipe => {
-        const ingNameList = recipe.ingredients.map(ing => capitalizeFirstLetter(ing.ingredient)); // Liste des noms d'ingredient de la recette
+    for (let i = 0; i < recipesData.length; i++) {
+        const ingNameList = recipesData[i].ingredients.map(ing => capitalizeFirstLetter(ing.ingredient)); // Liste des noms d'ingredient de la recette
         const diff = researchInputTermsIng.filter(x => !ingNameList.includes(x)); // Liste de l'ensemble des tag n'étant pas dans ingNameList
         if (diff.length === 0) { //Si aucun tag n'est exclu d'une recette, l'id de la recette est ajoutée
-        arrayIdIng.push(recipe.id);
+        arrayIdIng.push(recipesData[i].id);
         }
-    });
+    }
     arrayId.push(arrayIdIng);
 }
 
 function researchAppliance() {
     arrayIdApp = [];
-    recipesData.forEach(recipe => {
-        if (researchInputTermsApp.includes(recipe.appliance)){
-            arrayIdApp.push(recipe.id);
+    for (let i = 0; i < recipesData.length; i++) {
+        if (researchInputTermsApp.includes(recipesData[i].appliance)){
+            arrayIdApp.push(recipesData[i].id);
         }
-    });
+    }
     arrayId.push(arrayIdApp);
 }
 
 function researchUstensils() {
     arrayIdUst = [];
-    recipesData.forEach(recipe => {
-        const ustensils = recipe.ustensils.map(ust => capitalizeFirstLetter(ust)); //On s'assure que la casse est confrome pour la recherche
+    for (let i = 0; i < recipesData.length; i++) {
+        const ustensils = recipesData[i].ustensils.map(ust => capitalizeFirstLetter(ust)); //On s'assure que la casse est confrome pour la recherche
         const diff = researchInputTermsUst.filter(x => !ustensils.includes(x)); //Liste de l'ensemble des tag n'étant pas dans recipe.ustensils
         if (diff.length === 0) { //Si aucun tag n'est exclu d'une recette, l'id de la recette est ajoutée
-            arrayIdUst.push(recipe.id);
+            arrayIdUst.push(recipesData[i].id);
         }
-    });
+    }
     arrayId.push(arrayIdUst);
 }
 
