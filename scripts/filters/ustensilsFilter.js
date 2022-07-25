@@ -33,7 +33,7 @@ const ustensilChevronUp = document.querySelector(".filter__ustensil--expanded .f
 ustensilTitle.addEventListener("click", () => {
     ustensilExpanded.classList.remove('hidden');
     ustensilTitle.classList.add('hidden');
-    ustensilFilter.classList.replace("col-2", "col-6");
+    ustensilFilter.classList.replace("col-md-2", "col-md-6");
     }
 );
 
@@ -46,7 +46,7 @@ document.addEventListener("click", (e) => {
 function closeUstensilFilter(){
     ustensilExpanded.classList.add('hidden');
     ustensilTitle.classList.remove('hidden');
-    ustensilFilter.classList.replace("col-6", "col-2");
+    ustensilFilter.classList.replace("col-md-6", "col-md-2");
 }
 
 //Add tag and execute search results

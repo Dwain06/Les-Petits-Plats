@@ -33,7 +33,7 @@ const ingredientChevronUp = document.querySelector(".filter__ingredient--expande
 ingredientTitle.addEventListener("click", () => {
     ingredientExpanded.classList.remove('hidden');
     ingredientTitle.classList.add('hidden');
-    ingredientFilter.classList.replace("col-2", "col-6");
+    ingredientFilter.classList.replace("col-md-2", "col-md-6");
     }
 );
 
@@ -46,7 +46,7 @@ document.addEventListener("click", (e) => {
 function closeIngredientFilter(){
     ingredientExpanded.classList.add('hidden');
     ingredientTitle.classList.remove('hidden');
-    ingredientFilter.classList.replace("col-6", "col-2");
+    ingredientFilter.classList.replace("col-md-6", "col-md-2");
 }
 
 //Add tag and execute search results

@@ -34,7 +34,7 @@ const applianceChevronUp = document.querySelector(".filter__appliance--expanded 
 applianceTitle.addEventListener("click", () => {
     applianceExpanded.classList.remove('hidden');
     applianceTitle.classList.add('hidden');
-    applianceFilter.classList.replace("col-2", "col-6");
+    applianceFilter.classList.replace("col-md-2", "col-md-6");
     }
 );
 
@@ -47,7 +47,7 @@ document.addEventListener("click", (e) => {
 function closeApplianceFilter(){
     applianceExpanded.classList.add('hidden');
     applianceTitle.classList.remove('hidden');
-    applianceFilter.classList.replace("col-6", "col-2");
+    applianceFilter.classList.replace("col-md-6", "col-md-2");
 }
 
 //Add tag and execute search results
