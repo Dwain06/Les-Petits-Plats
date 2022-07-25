@@ -5,7 +5,8 @@ function init(data) {
     createFilterUstensils(data);
     if (data.length === 0){
         document.getElementById("recipes").innerHTML = 
-        `<div class="result">Aucune recette n'a été trouvée selon vos critères de recherche.</div>`;
+        `<div class="result">Aucune recette ne correspond à votre critère… vous pouvez
+        chercher «&nbsp;tarte aux pommes&nbsp;», «&nbsp;poisson&nbsp;», etc.</div>`;
     }
 }
 
