@@ -31,7 +31,7 @@ Développer une interface de recherche de recettes de cuisine selon 2 algorithme
 
 ##### Scénario alternatif A1 : aucune recette correspondante à la recherche
 _L'enchaînement A1 commence au point 3 du scénario nominal_
-3. L’interface affiche « Aucune recette ne correspond à votre critère… vous pouvez
+1. L’interface affiche « Aucune recette ne correspond à votre critère… vous pouvez
 chercher « tarte aux pommes », « poisson », etc.
 
 ##### Scénario alternatif A2 : l’utilisateur commence sa recherche par un tag
@@ -41,8 +41,8 @@ _L'enchaînement A2 commence au point 1 du scénario nominal et reprend au point
 
 ##### Scénario alternatif A3 : l’utilisateur ajoute d’autres tags pour la recherche avancée
 _L'enchaînement A3 commence au point 9 du scénario nominal. Cet enchaînement peut se répéter autant que nécessaire_
-10. L’utilisateur précise sa recherche grâce à l’un des champs : ingrédients, ustensiles, appareil.
-11. Au fur et à mesure du remplissage les mots clés ne correspondant pas à la frappe dans le champ disparaissent
-12. L’utilisateur choisit un mot clé dans le champ
-13. Le mot clé apparaît sous forme de tag sous la recherche principale
-14. Les résultats de recherche sont actualisés, ainsi que les éléments disponibles dans les champs de recherche avancée
+1. L’utilisateur précise sa recherche grâce à l’un des champs : ingrédients, ustensiles, appareil.
+2. Au fur et à mesure du remplissage les mots clés ne correspondant pas à la frappe dans le champ disparaissent
+3. L’utilisateur choisit un mot clé dans le champ
+4. Le mot clé apparaît sous forme de tag sous la recherche principale
+5. Les résultats de recherche sont actualisés, ainsi que les éléments disponibles dans les champs de recherche avancée
