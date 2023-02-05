@@ -1,5 +1,6 @@
 function search() {
     let filtredData = researchInput(recipesData);
+    console.log(filtredData)
     filtredData = researchIngredient(filtredData);
     filtredData = researchAppliance(filtredData);
     filtredData = researchUstensils(filtredData);
@@ -8,7 +9,8 @@ function search() {
 
 
 function researchInput(datas) {
-    const value = searchInput.value;
+    const value = searchInput.value.trim().toLowerCase();
+    console.log(value)
     if (value.length <= 2) return datas;
 
     return datas.filter(recipe => {
